@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Phần mềm Hộp số</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; display: flex; height: 100vh; }
+    #menu { width: 200px; background: #333; color: white; padding: 10px; box-sizing: border-box; }
+    #menu button { display: block; margin: 10px 0; width: 100%; padding: 10px; background: #555; color: white; border: none; cursor: pointer; }
+    #menu button:hover { background: #777; }
+    #content { flex: 1; padding: 20px; overflow: auto; }
+    iframe { width: 100%; height: 100%; border: none; }
+  </style>
+</head>
+<body>
+  <div id="menu">
+    <button onclick="showText()">Nội dung Text</button>
+    <button onclick="showPage('gioithieu.html')">Giới thiệu</button>
+    <button onclick="showPage('3dexam.html')">Mô hình 3D</button>
+  </div>
+  <div id="content">
+    <h2>Chào mừng đến với phần mềm Hộp số</h2>
+    <p>Chọn nội dung từ menu để hiển thị.</p>
+  </div>
+
+  <script>
+    const content = document.getElementById('content');
+
+    function showText() {
+      content.innerHTML = "<h2>Giới thiệu hộp số</h2><p>Đây là phần mô tả chi tiết về hộp số...</p>";
+    }
+
+    function showPage(page) {
+      content.innerHTML = '<iframe src="' + page + '"></iframe>';
+    }
+  </script>
+</body>
+</html>
